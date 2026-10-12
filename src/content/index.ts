@@ -1,14 +1,14 @@
 import type { Lesson, Unit } from './types';
 import { unit0 } from './unit0';
 import { unit1 } from './unit1';
+import { unit2 } from './unit2';
+import { unit3 } from './unit3';
+import { unit4 } from './unit4';
 
-export const UNITS: Unit[] = [unit0, unit1];
+export const UNITS: Unit[] = [unit0, unit1, unit2, unit3, unit4];
 
 /** الوحدات القادمة (معروضة على أنها غير متاحة بعد، حتى لا يظن المتعلم أن المنهج اكتمل) */
 export const UPCOMING_UNITS = [
-  { title: 'شرح المواصفات', titleEn: 'Explaining specs', cefr: 'A1–A2' },
-  { title: 'المقارنة بين المنتجات', titleEn: 'Comparing products', cefr: 'A2' },
-  { title: 'السعر والتوفر والاعتراضات', titleEn: 'Price, availability & objections', cefr: 'A2' },
   { title: 'التواصل مع الزملاء والمدير', titleEn: 'Talking with colleagues & manager', cefr: 'A2' },
   { title: 'نحو B1: مواقف أطول وتقييم شامل', titleEn: 'Towards B1', cefr: 'B1' },
 ];

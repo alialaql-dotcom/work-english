@@ -1,4 +1,5 @@
 import type { VocabItem } from './types';
+import { VOCAB_2 } from './vocab2';
 
 // ملاحظة: كل الأمثلة افتراضية لأغراض تعليمية فقط، ولا تمثل أسعار أو سياسات أو مخزون جرير.
 
@@ -547,8 +548,8 @@ const V: VocabItem[] = [
   },
 ];
 
-export const VOCAB: Record<string, VocabItem> = Object.fromEntries(V.map((v) => [v.id, v]));
-export const VOCAB_LIST = V;
+export const VOCAB_LIST: VocabItem[] = [...V, ...VOCAB_2];
+export const VOCAB: Record<string, VocabItem> = Object.fromEntries(VOCAB_LIST.map((v) => [v.id, v]));
 
 export function vocab(id: string): VocabItem {
   const v = VOCAB[id];

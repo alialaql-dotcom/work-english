@@ -239,6 +239,7 @@ describe('التدفق الكامل', () => {
     fireEvent.click(screen.getAllByRole('link', { name: /المسار/ })[0]);
     expect(screen.getAllByText('مقفل').length).toBeGreaterThan(5);
     expect(screen.getByText('قريبًا')).toBeInTheDocument();
-    expect(screen.getByText('المقارنة بين المنتجات')).toBeInTheDocument();
+    expect(screen.getByText('التواصل مع الزملاء والمدير')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'المقارنة بين المنتجات' })).toBeInTheDocument();
   });
 });

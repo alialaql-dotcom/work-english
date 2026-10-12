@@ -5,6 +5,7 @@ import { buildIcs, isValidTime, notificationsSupported, suggestTime, WINDOWS } f
 import { englishVoices, onVoicesChanged, recognitionSupported, ttsSupported } from '../lib/speech';
 import type { Gender, Settings } from '../lib/progress';
 import { useProgress } from '../state/ProgressContext';
+import { APP_VERSION, CHANGELOG } from '../version';
 
 export function SettingsPage() {
   const { progress, update, resetLocal, session, cloudAvailable } = useProgress();
@@ -195,7 +196,28 @@ export function SettingsPage() {
           </div>
         )}
       </section>
-      <p className="small muted center">المحتوى تعليمي ومستقل، ولا يمثل مكتبة جرير أو سياساتها أو أسعارها.</p>
+      <section className="card" id="whats-new">
+        <h2>ما الجديد</h2>
+        {CHANGELOG.map((c) => (
+          <div key={c.version} className="kv">
+            <b className="en" dir="ltr" style={{ textAlign: 'right' }}>
+              v{c.version} · {c.date}
+            </b>
+            <ul style={{ margin: '4px 0 0', paddingInlineStart: 18 }}>
+              {c.changes.map((x) => (
+                <li key={x} className="small">
+                  {x}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+      <p className="small muted center">
+        الإصدار <span className="en">{APP_VERSION}</span>
+        <br />
+        المحتوى تعليمي ومستقل، ولا يمثل مكتبة جرير أو سياساتها أو أسعارها.
+      </p>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import type { Exercise, Skill, Step } from '../content/types';
 import { VOCAB } from '../content/vocab';
 import { ExerciseView, type ExerciseResult } from '../components/ExerciseView';
 import { GrammarView, ListenView, RepeatView, VocabCard } from '../components/LessonParts';
-import { Icon, ProgressBar } from '../components/ui';
+import { BidiText, Icon, ProgressBar } from '../components/ui';
 import { lessonDrill, reviewSession, type GeneratedExercise } from '../lib/exerciseGen';
 import { completeLesson, introduceItems, recordAttempt, type Progress } from '../lib/progress';
 import { LESSON_PASS, lessonState } from '../lib/path';
@@ -228,7 +228,9 @@ export function LessonPage() {
             </p>
             <div className="card soft">
               <b>هدف الدرس</b>
-              <p style={{ margin: 0 }}>{lesson.goal}</p>
+              <p style={{ margin: 0 }}>
+                <BidiText text={lesson.goal} />
+              </p>
             </div>
             <p className="small muted">
               تحتاج سماعة أو مكبر صوت. المحادثات افتراضية للتدريب، وأي أسعار فيها أمثلة فقط وليست أسعارًا حقيقية.

@@ -89,7 +89,8 @@ describe('سلامة المحتوى', () => {
   });
 
   it('حجم المحتوى الحالي', () => {
-    expect(VOCAB_LIST.length).toBeGreaterThanOrEqual(70);
-    expect(ALL_LESSONS.length).toBe(13);
+    expect(VOCAB_LIST.length).toBeGreaterThanOrEqual(180);
+    expect(ALL_LESSONS.length).toBe(28);
+    expect(UNITS.map((u) => u.order)).toEqual([0, 1, 2, 3, 4]);
   });
 });

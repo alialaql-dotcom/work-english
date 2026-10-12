@@ -1,5 +1,5 @@
 // Service Worker بسيط للعمل دون اتصال: يحفظ ملفات الموقع نفسه فقط، ولا يلمس طلبات الحساب أو قاعدة البيانات.
-const CACHE = 'we-v1';
+const CACHE = 'we-1.1.0'; // غيّره مع كل إصدار
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html', './manifest.webmanifest', './favicon.svg'])).then(() => self.skipWaiting()));

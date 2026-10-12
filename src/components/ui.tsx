@@ -198,3 +198,21 @@ export function ConfirmButton({
     </div>
   );
 }
+
+/** نص عربي فيه جمل إنجليزية: يعزل كل مقطع إنجليزي حتى لا تختلط الاتجاهات وعلامات الترقيم */
+export function BidiText({ text }: { text: string }) {
+  const parts = text.split(/([A-Za-z][A-Za-z0-9 .,'’?!\-…/:]*[A-Za-z0-9.?!…])/g);
+  return (
+    <>
+      {parts.map((p, i) =>
+        i % 2 === 1 ? (
+          <bdi key={i} dir="ltr" lang="en" className="en">
+            {p}
+          </bdi>
+        ) : (
+          p
+        ),
+      )}
+    </>
+  );
+}
